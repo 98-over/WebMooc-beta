@@ -164,6 +164,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <div>相关课程：<a href="#"><%# Eval("course") %></a></div>
                             <div class="b_op">
                                 <div></div>
                                 <div onclick="showRemark('<%# Eval("b_no") %>')" style="display:flex;flex-direction:row;justify-content:flex-start">
@@ -203,6 +204,14 @@
             </div>
             <div class="col-md-4 column" style="border: solid; border-radius: 10px; border-color: lightgray">
                 <asp:TextBox runat="server" ID="b_text" TextMode="MultiLine" placeholder="分享一下今天的收获吧..." BorderStyle="None" Style="outline: none; overflow: hidden" Width="100%" Height="150px"></asp:TextBox><br />
+                相关课程：
+                <asp:DropDownList runat="server" ID="course_select" OnSelectedIndexChanged="course_select_SelectedIndexChanged" AutoPostBack="true">
+                    <asp:ListItem Value="--请选择--" Selected="True">--请选择--</asp:ListItem>
+                    <asp:ListItem Value="C++">C++</asp:ListItem>
+                    <asp:ListItem Value="Java">Java</asp:ListItem>
+                    <asp:ListItem Value="Python">Python</asp:ListItem>
+                </asp:DropDownList>
+                <asp:TextBox runat="server" ID="course" CssClass="form-control"></asp:TextBox>
                 <div style="display: flex; flex-direction: row; justify-content: flex-start">
                     <div style="display: flex; flex-direction: column; justify-content: flex-start">
                         <div style="display: flex; flex-direction: row; justify-content: space-around">
